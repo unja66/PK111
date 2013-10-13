@@ -155,8 +155,6 @@ public class TOC {
 	      file.createNewFile();
 	      out = new FileOutputStream(file);
 	      
-	      // Bitmap.CompressFormat.JPEG 도 있음
-	      // 저장 품질 선택 가능 (현재 100%)
 	      bmp.compress(Bitmap.CompressFormat.PNG, 100, out);
 	    } catch(Exception e) {
 	      e.printStackTrace();

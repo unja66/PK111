@@ -51,11 +51,11 @@ public class ViewTocActivity extends Activity implements OnItemClickListener {
 				if (fileId != null) {
 					showNotePages(fileId);
 				} else {
-					Toast.makeText(ViewTocActivity.mainContext, "³×Æ®¿÷ÀÌ ºÒ¾ÈÁ¤ ÇÕ´Ï´Ù. Â÷ÈÄ ´Ù½Ã ½ÃµµÇØ ÁÖ¼¼¿ä.",
+					Toast.makeText(ViewTocActivity.mainContext, "ì„ íƒëœ íŒŒì¼ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.",
 							Toast.LENGTH_LONG).show();
 				}
 			} else {
-				Toast.makeText(ViewTocActivity.mainContext, "ÆäÀÌÁö ÀÌ¹ÌÁö ·Îµù¿¡ ½ÇÆĞÇß½À´Ï´Ù.", 
+				Toast.makeText(ViewTocActivity.mainContext, "ì˜ˆìƒë˜ì§€ ì•Šì€ ìƒí™©ì…ë‹ˆë‹¤.", 
 						Toast.LENGTH_LONG).show();
 			}
 		} 
@@ -65,7 +65,7 @@ public class ViewTocActivity extends Activity implements OnItemClickListener {
 	public void onBackPressed(){
 		backpress = (backpress + 1);
 		if (backpress == 1) {
-			Toast.makeText(getApplicationContext(), "ÇÑ ¹ø ´õ ´©¸£¸é ÇÁ·Î±×·¥ ´İ½À´Ï´Ù.", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "Back ë²„íŠ¼ì„ í•œ ë²ˆ ë” ëˆ„ë¥´ì‹œë©´ ì¢…ë£Œë©ë‹ˆë‹¤.", Toast.LENGTH_SHORT).show();
 		} else {
 			if (backpress > 1) {         
 				this.finish();     
@@ -164,9 +164,9 @@ public class ViewTocActivity extends Activity implements OnItemClickListener {
 		}
 		
 		new AlertDialog.Builder(this)
-			.setTitle("¾Ë·Áµå¸³´Ï´Ù")
+			.setTitle("ì•Œë¦¼")
 			.setMessage(notice)
-			.setPositiveButton("È®ÀÎ", new DialogInterface.OnClickListener() {
+			.setPositiveButton("í™•ì¸", new DialogInterface.OnClickListener() {
 		        public void onClick(DialogInterface dialog, int which) { 
 		        	dialog.dismiss();
 		        	updateNoticeReadHistory();
@@ -180,7 +180,7 @@ public class ViewTocActivity extends Activity implements OnItemClickListener {
 		
 		if (clickedItem.hasPageImage()) {
 			((TextView)view.findViewById(R.id.tocTitle)).setBackgroundColor(Color.MAGENTA);
-			progressDialog = ProgressDialog.show(this, "", "ÆäÀÌÁö ·Îµù Áß", true);
+			progressDialog = ProgressDialog.show(this, "", "ì´ë¯¸ì§€ë¥¼ ì½ì–´ë“¤ì…ë‹ˆë‹¤.", true);
 			Thread thread = new Thread(new Runnable() { 
 	            public void run() {
 	            	String fileId = clickedItem.getFileId();
